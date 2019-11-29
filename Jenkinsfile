@@ -6,6 +6,6 @@ node {
        sh 'cd Calendar && mvn compile && mvn package'
   }
   stage('run') {
-       sh './run.sh'
+       sh 'cd Calendar && ./run.sh'
   }
 }
