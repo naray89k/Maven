@@ -4,7 +4,7 @@ node {
   }
   stage('package') {
       withMaven(maven: 'maven'){
-          sh "mvn clean compile package"
+          sh "cd Calendar && mvn clean compile package"
       }
   }
   stage('run') {
