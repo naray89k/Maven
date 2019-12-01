@@ -3,7 +3,9 @@ node {
     checkout scm
   }
   stage('package') {
-       sh 'cd Calendar && mvn compile && mvn package'
+      withMaven(maven: 'maven'){
+          sh "mvn clean compile package"
+      }
   }
   stage('run') {
        sh 'cd Calendar && ./run.sh'
